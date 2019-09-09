@@ -60,6 +60,10 @@ If you do not have a poem in mind, you can always use [a poem I've selected](#sa
 - [ ] If you have not already cloned the repository, do so now.
 * Find an easily-accessible and easy to remember location to do this. It may require using commands like `cd`, `pwd`, and the `~` to find the best place for the repository.
 - [ ] When you've selected the poem you're going to replicate, locate the Poem.java file.
+- [ ] Edit the `main` `method` of this class to implement the number of `System.out.println` statements required to replicate the text you've chosen.
+* This will vary from student to student.
+- [ ] When finished, grade your assignment using the GatorGrader methods below. 
+* Should you run into difficulties with the steps listed, let a TL or the professor know.
 
 ## Using GatorGrader
 
@@ -77,7 +81,7 @@ When you turn assignments in for this class, the action triggers a "build" in a 
 * The newly-acquired image should appear in the list as `gatoreducator/dockagator`
 - [ ] To run the GatorGrader, `cd` to the main directory of your repository and type:
 ```
-docker run -itrm --mount type=bind,source="$(pwd)",target="/" --hostname GatorGrader gatoreduacator/dockagator
+docker run -itrm --mount type=bind,source="$(pwd)",target="/project" --hostname GatorGrader gatoreduacator/dockagator /bin/bash
 ```
 * You should now be in the GatorGrader `container`.
 - [ ] Type `gradle build` to begin setting up your assignment for grading.
