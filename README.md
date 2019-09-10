@@ -7,7 +7,7 @@ In this laboratory session, we explore the Java Standard Library and begin to le
 
 * Creating an object with multiple `System.out.println` statements
 * Understanding of the role and function of the `main` method in a Java `class`.
-* Developing a working solution to an abstract request/"problem" statement
+* Developing a working solution to an abstract request.
 
 ## General guidelines for laboratory sessions
 
@@ -41,15 +41,17 @@ A successful submission for this lab will include a Java program which:
         * The source from which the poem was taken
     * **At Least** 10 `System.out.println` statements which contain individual lines of the work chosen that:
         * Display the title, author, and source of work chosen, separated from the body of the poem by a blank line
-        * Reproduce each line of the poem paying attention to spacing, syntax, and correct grammar
+        * Reproduce each line of the poem paying attention to spacing, syntax, and correct grammar using individual `System.out.println` commands
             * Keep in mind that "spacing" here means both horizontal and vertical spacing
         * Function as syntactically-correct Java statements
 * A 250-word reflection included in a file named `reflection.md`, located in a directory called `writing` located in the main directory of your `commit`ted repository.
     * This file must contain:
         * One (1) level one header which should read "CMPSC 100-03: Lab 2"
-        * Two (2) level two headers which describe the processes of finding the poem and programming the poem
+        * Two (2) level two headers which describe the processes of finding the poem you used and your experience programming it
             * What interested in you in that particular work?
             * What challenges or difficulties did you face in reproducing it?
+            * If we consider Java an "object-oriented programing" (OOP) language, how does your program model an actual poem as an object?
+                * It may be productive to think about [this very basic, uncomprehensive definition](https://www.poetryarchive.org/glossary/line) of the poetic "line."
 
 **Note**: Some poems contain italicized or otherwise-styled language. Though most formatting is possible in text-only Java applications, it is not a required part of the submission. However, students interested in achieving this formatting can read more about formatting and non-printing characters in Java [in this Stack Overflow discussion](https://stackoverflow.com/questions/30310147/how-to-print-an-string-variable-as-italicized-text).
 
@@ -58,12 +60,12 @@ If you do not have a poem in mind, you can always use [a poem I've selected](#sa
 ## Write your code
 
 - [ ] If you have not already cloned the repository, do so now.
+* Don't forget to add your SSH key first:
+    * Check if you have a key already loaded: `ssh-add -l`
+    * `eval "$(ssh-agent -s)"`
+    * `ssh-add ~/.ssh/id_rsa`
 * Find an easily-accessible and easy to remember location to do this. It may require using commands like `cd`, `pwd`, and the `~` to find the best place for the repository.
 - [ ] When you've selected the poem you're going to replicate, locate the DisplayPoem.java file.
-- [ ] Edit the `main` `method` of this class to implement the number of `System.out.println` statements required to replicate the text you've chosen.
-* This will vary from student to student.
-- [ ] When finished, grade your assignment using the GatorGrader methods below. 
-* Should you run into difficulties with the steps listed, let a TL or the professor know.
 
 ## Using GatorGrader
 
@@ -78,10 +80,10 @@ When you turn assignments in for this class, the action triggers a "build" in a 
 - [ ] In a terminal window, type `docker pull gatoreducator/dockagator`.
 * This will contact Docker Hub to download the GatorGrade docker `image`.
 - [ ] Type `docker images`
-* The newly-acquired image should appear in the list as `gatoreducator/dockagator`
+* The newly-acquired `image` should appear in the list as `gatoreducator/dockagator`
 - [ ] To run the GatorGrader, `cd` to the main directory of your repository and type:
 ```
-docker run -it --mount type=bind,source="$(pwd)",target="/project" --hostname GatorGrader gatoreduacator/dockagator /bin/bash
+docker -it run --mount type=bind,source="$(pwd)",target="/project" gatoreduacator/dockagator /bin/bash
 ```
 * You should now be in the GatorGrader `container`.
 - [ ] Type `gradle build` to begin setting up your assignment for grading.
